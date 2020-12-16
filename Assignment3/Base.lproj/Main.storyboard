@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Front Door View Controller-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="FrontDoorViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Assignment3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8T-Qq-7U1">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Coat room"/>
                                         <connections>
                                             <segue destination="Vuq-AL-mGr" kind="show" id="xxf-DD-nNg"/>
                                         </connections>
@@ -53,7 +53,7 @@
         <!--Library View Controller-->
         <scene sceneID="HiG-nf-ASl">
             <objects>
-                <viewController id="a6d-kh-nkd" customClass="LibraryViewController" sceneMemberID="viewController">
+                <viewController id="a6d-kh-nkd" customClass="LibraryViewController" customModule="Assignment3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fao-oZ-Alh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,8 +61,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="library" translatesAutoresizingMaskIntoConstraints="NO" id="SSg-Ie-WqT">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xc5-jy-Uuh">
-                                <rect key="frame" x="51" y="782" width="314" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xc5-jy-Uuh">
+                                <rect key="frame" x="50" y="782" width="314" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiQ-w2-xSa">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
@@ -86,16 +86,24 @@
                             <constraint firstItem="uuG-4C-iDz" firstAttribute="trailing" secondItem="xc5-jy-Uuh" secondAttribute="trailing" constant="50" id="t5j-vr-Aj0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8eQ-He-qk9"/>
+                    <navigationItem key="navigationItem" id="8eQ-He-qk9">
+                        <barButtonItem key="rightBarButtonItem" title="Go back to first view" id="Hrm-c8-rnQ">
+                            <connections>
+                                <action selector="goToFirstView:" destination="a6d-kh-nkd" id="jVS-0s-DPI"/>
+                                <segue destination="Jom-aG-er3" kind="unwind" unwindAction="unwindToFrontDoorWithSegue:" id="93z-zo-AcT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dj8-YH-wt3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Jom-aG-er3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-39" y="463"/>
         </scene>
         <!--Secret Passage View Controller-->
         <scene sceneID="aR7-HG-NfP">
             <objects>
-                <viewController id="Bx8-ez-xpo" customClass="SecretPassageViewController" sceneMemberID="viewController">
+                <viewController id="Bx8-ez-xpo" customClass="SecretPassageViewController" customModule="Assignment3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="80W-Yc-08s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,16 +150,24 @@
                             <constraint firstItem="0I9-p9-EdA" firstAttribute="trailing" secondItem="5Jo-pM-9iH" secondAttribute="trailing" id="zjx-Pb-axs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5mX-7e-xey"/>
+                    <navigationItem key="navigationItem" id="5mX-7e-xey">
+                        <barButtonItem key="rightBarButtonItem" title="Go back to first view" id="QaI-Cg-8Xq">
+                            <connections>
+                                <action selector="goToFirstView:" destination="Bx8-ez-xpo" id="Kcm-dz-ZKj"/>
+                                <segue destination="Kw3-O6-Fzz" kind="unwind" unwindAction="unwindToFrontDoorWithSegue:" id="gea-Wn-y64"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GfE-5J-Our" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Kw3-O6-Fzz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-39" y="1227"/>
         </scene>
         <!--Kitchen View Controller-->
         <scene sceneID="IVO-9w-n0S">
             <objects>
-                <viewController id="4va-80-Tn2" customClass="KitchenViewController" sceneMemberID="viewController">
+                <viewController id="4va-80-Tn2" customClass="KitchenViewController" customModule="Assignment3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4l9-Qa-mug">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,16 +200,24 @@
                             <constraint firstItem="mTC-Uu-Z2U" firstAttribute="bottom" secondItem="QPN-Pj-kKg" secondAttribute="bottom" constant="50" id="xRx-Pt-5xb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="X9J-Qv-fXG"/>
+                    <navigationItem key="navigationItem" id="X9J-Qv-fXG">
+                        <barButtonItem key="rightBarButtonItem" title="Go back to first view" id="Npm-TJ-ePI">
+                            <connections>
+                                <action selector="goToFirstView:" destination="4va-80-Tn2" id="A6e-Fd-5do"/>
+                                <segue destination="hD3-pB-OXS" kind="unwind" unwindAction="unwindToFrontDoorWithSegue:" id="a6S-IC-seB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5SJ-kd-cug" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="hD3-pB-OXS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1051" y="1227"/>
         </scene>
         <!--Bed Room View Controller-->
         <scene sceneID="nS3-gq-Wua">
             <objects>
-                <viewController id="hoF-9A-kPo" customClass="BedRoomViewController" sceneMemberID="viewController">
+                <viewController id="hoF-9A-kPo" customClass="BedRoomViewController" customModule="Assignment3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Acj-Qp-ehn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,16 +235,24 @@
                             <constraint firstItem="4XW-Fm-8Lm" firstAttribute="top" secondItem="3pA-c8-B6z" secondAttribute="top" id="fgo-TS-uWy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vHG-sj-TzV"/>
+                    <navigationItem key="navigationItem" id="vHG-sj-TzV">
+                        <barButtonItem key="rightBarButtonItem" title="Go back to first view" id="6XK-bH-XIg">
+                            <connections>
+                                <action selector="goToFirstView:" destination="hoF-9A-kPo" id="rh2-Uf-doa"/>
+                                <segue destination="uS3-YT-YTU" kind="unwind" unwindAction="unwindToFrontDoorWithSegue:" id="ll9-Wd-hqq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zeY-cF-bdJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="uS3-YT-YTU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2051" y="1227"/>
         </scene>
         <!--Bath Room View Controller-->
         <scene sceneID="jbC-1C-cZx">
             <objects>
-                <viewController id="1Fx-Ga-St9" customClass="BathRoomViewController" sceneMemberID="viewController">
+                <viewController id="1Fx-Ga-St9" customClass="BathRoomViewController" customModule="Assignment3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HNN-35-Qlo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,16 +270,24 @@
                             <constraint firstItem="HhZ-Oy-bBp" firstAttribute="leading" secondItem="pqx-cd-VbC" secondAttribute="leading" id="f3m-Oy-vyW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Yyl-4o-lKm"/>
+                    <navigationItem key="navigationItem" id="Yyl-4o-lKm">
+                        <barButtonItem key="rightBarButtonItem" title="Go back to first view" id="WNR-ho-gF2">
+                            <connections>
+                                <action selector="goToFirstView:" destination="1Fx-Ga-St9" id="nO1-52-TBe"/>
+                                <segue destination="rfZ-4N-dnX" kind="unwind" unwindAction="unwindToFrontDoorWithSegue:" id="Bgy-Ip-Dnf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2d-JW-QTl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="rfZ-4N-dnX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3078" y="1227"/>
         </scene>
         <!--Coat Room View Controller-->
         <scene sceneID="US8-KG-F2d">
             <objects>
-                <viewController id="Vuq-AL-mGr" customClass="CoatRoomViewController" sceneMemberID="viewController">
+                <viewController id="Vuq-AL-mGr" customClass="CoatRoomViewController" customModule="Assignment3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aIN-Iy-zf0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -294,9 +334,17 @@
                             <constraint firstItem="Wk0-ae-AQ8" firstAttribute="bottom" secondItem="j7c-8N-jGz" secondAttribute="bottom" constant="50" id="ybL-4J-ahK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mhl-pu-MXX"/>
+                    <navigationItem key="navigationItem" id="GLJ-p3-5Gx">
+                        <barButtonItem key="rightBarButtonItem" title="Go back to first view" id="ZPE-cE-meK">
+                            <connections>
+                                <action selector="goToFirstView:" destination="Vuq-AL-mGr" id="clx-dX-ZDj"/>
+                                <segue destination="bNL-aI-0vy" kind="unwind" unwindAction="unwindToFrontDoorWithSegue:" id="G2E-3V-3r8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="srn-5O-zi1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bNL-aI-0vy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1051" y="-357"/>
         </scene>
@@ -321,7 +369,7 @@
         <!--Stairs Up View Controller-->
         <scene sceneID="Uz3-qZ-Dwh">
             <objects>
-                <viewController id="B7e-MB-BWk" customClass="StairsUpViewController" sceneMemberID="viewController">
+                <viewController id="B7e-MB-BWk" customClass="StairsUpViewController" customModule="Assignment3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N0I-JT-Tds">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -361,16 +409,24 @@
                             <constraint firstItem="mT9-DM-5So" firstAttribute="trailing" secondItem="IdS-Lj-pMS" secondAttribute="trailing" constant="50" id="yz6-wg-eHD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="B2e-W0-3NN"/>
+                    <navigationItem key="navigationItem" id="B2e-W0-3NN">
+                        <barButtonItem key="rightBarButtonItem" title="Go back to first view" id="0xS-ba-4xU">
+                            <connections>
+                                <action selector="goToFirstView:" destination="B7e-MB-BWk" id="cxF-44-nqJ"/>
+                                <segue destination="aPz-Yq-Tbb" kind="unwind" unwindAction="unwindToFrontDoorWithSegue:" id="Thb-db-CE7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKl-vY-edH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="aPz-Yq-Tbb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2051" y="463"/>
         </scene>
         <!--Dining Room View Controller-->
         <scene sceneID="ane-Br-RzE">
             <objects>
-                <viewController id="4sn-o3-kzw" customClass="DiningRoomViewController" sceneMemberID="viewController">
+                <viewController id="4sn-o3-kzw" customClass="DiningRoomViewController" customModule="Assignment3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EN4-6J-OlP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -403,16 +459,24 @@
                             <constraint firstItem="rHA-eP-cQT" firstAttribute="bottom" secondItem="Vs7-eG-ukJ" secondAttribute="bottom" constant="50" id="zqw-NG-sgF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="rgH-Wz-T8Y"/>
+                    <navigationItem key="navigationItem" id="rgH-Wz-T8Y">
+                        <barButtonItem key="rightBarButtonItem" title="Go back to first view" id="lA3-Xx-VbS">
+                            <connections>
+                                <action selector="goToFirstView:" destination="4sn-o3-kzw" id="dd9-4F-mQZ"/>
+                                <segue destination="C4e-eS-NGo" kind="unwind" unwindAction="unwindToFrontDoorWithSegue:" id="hYt-TK-42M"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUU-5z-euC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="C4e-eS-NGo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1051" y="463"/>
         </scene>
         <!--Dungeon View Controller-->
         <scene sceneID="GCi-7S-Taw">
             <objects>
-                <viewController id="ab2-7d-Ywn" customClass="DungeonViewController" sceneMemberID="viewController">
+                <viewController id="ab2-7d-Ywn" customClass="DungeonViewController" customModule="Assignment3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fGB-ir-p4e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -430,16 +494,24 @@
                             <constraint firstItem="6VA-gl-EBj" firstAttribute="top" secondItem="fcA-qn-IU4" secondAttribute="top" id="uSA-Hj-64X"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Gr8-yE-XoU"/>
+                    <navigationItem key="navigationItem" id="Gr8-yE-XoU">
+                        <barButtonItem key="rightBarButtonItem" title="Go back to first view" id="YKm-7a-bqW">
+                            <connections>
+                                <action selector="goToFirstView:" destination="ab2-7d-Ywn" id="whF-Wp-Kb7"/>
+                                <segue destination="jE0-R2-5BO" kind="unwind" unwindAction="unwindToFrontDoorWithSegue:" id="6Gc-YZ-CVt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJ3-wc-yWf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="jE0-R2-5BO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-774" y="1992"/>
         </scene>
         <!--Generator View Controller-->
         <scene sceneID="VXH-ov-Fw6">
             <objects>
-                <viewController id="sfF-sV-ShY" customClass="GeneratorViewController" sceneMemberID="viewController">
+                <viewController id="sfF-sV-ShY" customClass="GeneratorViewController" customModule="Assignment3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NbW-dW-qBl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -457,16 +529,24 @@
                             <constraint firstItem="oEc-zh-pQY" firstAttribute="leading" secondItem="9Sf-Wj-Syu" secondAttribute="leading" id="vjQ-Jp-Hqt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Acy-Q2-N9N"/>
+                    <navigationItem key="navigationItem" id="Acy-Q2-N9N">
+                        <barButtonItem key="rightBarButtonItem" title="Go back to first view" id="mXY-5r-4YI">
+                            <connections>
+                                <action selector="goToFirstView:" destination="sfF-sV-ShY" id="d4G-jJ-ItE"/>
+                                <segue destination="4hH-Mw-pPa" kind="unwind" unwindAction="unwindToFrontDoorWithSegue:" id="gja-es-gJu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oOe-Zg-mxW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="4hH-Mw-pPa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-39" y="2733"/>
         </scene>
         <!--Cursed Chalice View Controller-->
         <scene sceneID="3lv-hl-Pov">
             <objects>
-                <viewController id="Ui3-C4-gS2" customClass="CursedChaliceViewController" sceneMemberID="viewController">
+                <viewController id="Ui3-C4-gS2" customClass="CursedChaliceViewController" customModule="Assignment3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WbA-IF-Po2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -484,16 +564,24 @@
                             <constraint firstItem="bMA-H3-l6S" firstAttribute="bottom" secondItem="E0d-Pu-q5h" secondAttribute="bottom" id="nmo-Rd-VvQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Itf-Og-aHE"/>
+                    <navigationItem key="navigationItem" id="Itf-Og-aHE">
+                        <barButtonItem key="rightBarButtonItem" title="Go back to first view" id="0c1-9f-Vvx">
+                            <connections>
+                                <action selector="goToFirstView:" destination="Ui3-C4-gS2" id="rjF-FF-XmN"/>
+                                <segue destination="UOW-eS-WZl" kind="unwind" unwindAction="unwindToFrontDoorWithSegue:" id="kML-wN-2DC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NIQ-j4-8pE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="UOW-eS-WZl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="719" y="2733"/>
         </scene>
         <!--Labratory View Controller-->
         <scene sceneID="jJ8-nK-VXb">
             <objects>
-                <viewController id="HBv-Bw-oyI" customClass="LabratoryViewController" sceneMemberID="viewController">
+                <viewController id="HBv-Bw-oyI" customClass="LabratoryViewController" customModule="Assignment3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16P-Rf-h66">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -526,16 +614,24 @@
                             <constraint firstItem="ZZV-nP-eOv" firstAttribute="top" secondItem="Lr8-3K-5C6" secondAttribute="top" id="ije-A8-Yza"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ztQ-xk-J85"/>
+                    <navigationItem key="navigationItem" id="ztQ-xk-J85">
+                        <barButtonItem key="rightBarButtonItem" title="Go back to first view" id="Fnq-8h-C3n">
+                            <connections>
+                                <action selector="goToFirstView:" destination="HBv-Bw-oyI" id="hzA-MN-EBo"/>
+                                <segue destination="r9Y-4H-wzd" kind="unwind" unwindAction="unwindToFrontDoorWithSegue:" id="MOi-eN-tab"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90s-8i-Hfl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="r9Y-4H-wzd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-39" y="1992"/>
         </scene>
         <!--Mysterious Lake View Controller-->
         <scene sceneID="dH4-uO-AcJ">
             <objects>
-                <viewController id="KO8-Pa-KTb" customClass="MysteriousLakeViewController" sceneMemberID="viewController">
+                <viewController id="KO8-Pa-KTb" customClass="MysteriousLakeViewController" customModule="Assignment3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ker-vU-brP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -568,16 +664,24 @@
                             <constraint firstItem="sbf-Io-V3G" firstAttribute="top" secondItem="Deb-oh-W4y" secondAttribute="top" id="q5a-nC-ig7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mhT-ox-aNe"/>
+                    <navigationItem key="navigationItem" id="mhT-ox-aNe">
+                        <barButtonItem key="rightBarButtonItem" title="Go back to first view" id="Yr8-UG-SQU">
+                            <connections>
+                                <action selector="goToFirstView:" destination="KO8-Pa-KTb" id="V7X-DL-aVP"/>
+                                <segue destination="fwh-iJ-E81" kind="unwind" unwindAction="unwindToFrontDoorWithSegue:" id="X5F-Fv-rFb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZT-oY-lDh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="fwh-iJ-E81" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="719" y="1992"/>
         </scene>
         <!--Back Porch View Controller-->
         <scene sceneID="mNV-iF-fkv">
             <objects>
-                <viewController id="hvA-a8-T0X" customClass="BackPorchViewController" sceneMemberID="viewController">
+                <viewController id="hvA-a8-T0X" customClass="BackPorchViewController" customModule="Assignment3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dzN-O0-0u4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -595,9 +699,17 @@
                             <constraint firstItem="tvU-Zf-eo5" firstAttribute="bottom" secondItem="Ccu-la-U6B" secondAttribute="bottom" id="xG4-DV-KeQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="X1y-YW-i1t"/>
+                    <navigationItem key="navigationItem" id="X1y-YW-i1t">
+                        <barButtonItem key="rightBarButtonItem" title="Go back to first view" id="HDj-DX-cXm">
+                            <connections>
+                                <action selector="goToFirstView:" destination="hvA-a8-T0X" id="Ip8-QG-WqQ"/>
+                                <segue destination="J7Q-2x-4dM" kind="unwind" unwindAction="unwindToFrontDoorWithSegue:" id="OmT-j4-w2r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MrP-nO-KM2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="J7Q-2x-4dM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1533" y="1992"/>
         </scene>
