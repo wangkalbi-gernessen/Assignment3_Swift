@@ -16,5 +16,6 @@ class DiningRoomViewController: UIViewController {
     
     @IBAction func goToFirstView(_ sender: UIBarButtonItem) {
         self.navigationController?.popToRootViewController(animated: true)
+        
     }
 }
